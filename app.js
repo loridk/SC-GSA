@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var compression = require('compression');
 
-var routes = require('./routes/index');
-
 var app = express();
 
 // view engine setup
@@ -30,7 +28,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//routes
+var routes = require('./routes/index');
+var blog = require('./routes/blog');
+
 app.use('/', routes);
+app.use('/blog', blog);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

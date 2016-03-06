@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET blog page. */
-router.get('/blog', function(req, res) {
+router.get('/', function(req, res) {
+    console.log('router blog');
     res.render('blog');
 });
 

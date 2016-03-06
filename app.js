@@ -29,11 +29,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
-var routes = require('./routes/index');
+var about = require('./routes/about');
+var contact = require('./routes/contact');
+var events = require('./routes/events');
 var blog = require('./routes/blog');
+var resources = require('./routes/resources');
+var index = require('./routes/index');
 
-app.use('/', routes);
+app.use('/about', about);
+app.use('/contact', contact);
+app.use('/events', events);
 app.use('/blog', blog);
+app.use('/external-resources', resources);
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

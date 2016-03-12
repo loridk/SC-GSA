@@ -15,10 +15,10 @@ For a quick tutorial on Node, Express, and Handlebars, check out [this tutorial 
     - `git checkout master`
     - `git fetch upstream`
     - `git merge upstream/master`
-    - `git checkout _your-branch_`
+    - `git checkout your-branch`
     - `git merge master`
 - do your work, making sure to commit it regularly to your branch:
     - `git add *`
-    - `git commit 'describe the work you did'`
+    - `git commit -m 'describe the work you did'`
     - `git push`
 - when you want to have your work added to the main repository, submit a pull request

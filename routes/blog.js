@@ -3,8 +3,9 @@ var router = express.Router();
 
 /* GET blog page. */
 router.get('/', function(req, res) {
-    console.log('router blog');
-    res.render('blog');
+    res.render('blog', {
+        isAdmin: req.isAuthenticated()
+    });
 });
 
 module.exports = router;

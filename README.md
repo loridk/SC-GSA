@@ -22,3 +22,29 @@ For a quick tutorial on Node, Express, and Handlebars, check out [this tutorial 
     - `git commit -m 'describe the work you did'`
     - `git push`
 - when you want to have your work added to the main repository, submit a pull request
+
+### Skeleton for config/config.json
+```
+{
+  "development": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "server": {
+      "port": 3000
+    },
+    "googleAuth": {
+      "clientID": "",
+      "clientSecret": "",
+      "callbackURL": ""
+    },
+    "session": {
+      "host": "",
+      "port": ,
+      "database":
+    }
+  }
+}
+```

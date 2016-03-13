@@ -6,13 +6,19 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var compression = require('compression');
-var configAuth = require('./config/config.json');
+
 var passport     = require('passport');
 var flash        = require('connect-flash');
 var session      = require('express-session');
 var redisStore = require('connect-redis')(session);
+var configAuth = require('./config/config.json')[process.env.NODE_ENV];
 
 var app = express();
+
+var models = require('./models');
+
+// use Sequelize on boot up
+models.sequelize.sync();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

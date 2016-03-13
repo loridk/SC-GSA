@@ -1,6 +1,7 @@
 // load google oauth
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var configAuth = require('./config.json');
+var configAuth = require('./config.json')[process.env.NODE_ENV];
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 
 module.exports = function(passport) {
 
@@ -21,7 +22,7 @@ module.exports = function(passport) {
         passReqToCallback : true
     },
     function(req, token, refreshToken, profile, done) {
-        if (profile.emails[0].value != "scgsa.test@gmail.com") {
+        if (profile.emails[0].value != "scgsa.test@gmail.com" && profile.emails[0].value != "meghan.tara@gmail.com") {
             req.session.destroy();
             console.log('YOU ARE NOT AN ADMIN USER', req.isUnauthenticated());
             var err = new Error();
@@ -29,7 +30,7 @@ module.exports = function(passport) {
             err.message = "Invalid email address.";
             done(err);
         } else {
-            console.log('profile ', profile);
+            //console.log('profile ', profile);
             process.nextTick(function() {
                 console.log('CONGRATS, YOU ARE AN ADMIN USER');
                 req.admin = true;

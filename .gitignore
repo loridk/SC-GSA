@@ -1,17 +1,4 @@
 node_modules/
 .DS_Store
-.idea/.name
-.idea/SC-GSA.iml
-.idea/dictionaries/
-.idea/encodings.xml
-.idea/jsLibraryMappings.xml
-.idea/libraries/
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/workspace.xml
-<<<<<<< HEAD
-.idea/scopes/scope_setting.xml
-=======
 /config/config.json
->>>>>>> upstream/master
+.idea/

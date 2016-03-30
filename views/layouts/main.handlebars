@@ -42,6 +42,11 @@
 
         </div>
         <span class="right">&copy; 2016 GSA</span>
+        {{#if isAdmin}}
+            <a href="/admin/logout">Log out</a>
+        {{else}}
+            <a href="/admin/login/google">Log in</a>
+        {{/if}}
     </footer>
 
     <script src="/js/libs/jquery-2.1.4.min.js"></script>

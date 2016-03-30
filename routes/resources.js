@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET external resources page. */
 router.get('/', function(req, res) {
-    res.render('resources');
+    res.render('resources', {
+        isAdmin: req.isAuthenticated()
+    });
 });
 
 module.exports = router;

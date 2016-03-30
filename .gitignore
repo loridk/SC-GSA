@@ -10,3 +10,8 @@ node_modules/
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+<<<<<<< HEAD
+.idea/scopes/scope_setting.xml
+=======
+/config/config.json
+>>>>>>> upstream/master

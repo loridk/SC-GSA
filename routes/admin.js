@@ -5,8 +5,10 @@ var isloggedin = require('./../utils/isloggedin');
 
 /* GET /admin */
 router.get('/', isloggedin.isloggedin, function(req, res) {
-    console.log('req.user ', req.user);
-    res.render('admin');
+    //console.log('req.user ', req.user);
+    res.render('admin', {
+        isAdmin: req.isAuthenticated()
+    });
 });
 
 /**
@@ -29,6 +31,7 @@ router.get('/auth/callback/', passport.authenticate('google', {
 /* GET /admin/logout */
 router.get('/logout', function(req,res) {
     req.session.destroy();
+    console.log('logging out');
     res.redirect('/');
 });
 

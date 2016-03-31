@@ -15,6 +15,16 @@ module.exports = function(sequelize, Datatypes) {
                     msg: "Email required"
                 }
             }
+        },
+        name: {
+            type: Datatypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: {
+                    args: true,
+                    msg: "Name required"
+                }
+            }
         }
     });
 

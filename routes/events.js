@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET events page. */
 router.get('/', function(req, res) {
-    res.render('events');
+    res.render('events', {
+        isAdmin: req.isAuthenticated()
+    });
 });
 
 module.exports = router;

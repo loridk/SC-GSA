@@ -7,7 +7,18 @@ var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
 var compression = require('compression');
 
+var passport     = require('passport');
+var flash        = require('connect-flash');
+var session      = require('express-session');
+var redisStore = require('connect-redis')(session);
+var configAuth = require('./config/config.json')[process.env.NODE_ENV];
+
 var app = express();
+
+var models = require('./models');
+
+// use Sequelize on boot up
+models.sequelize.sync();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,7 +39,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// pass passport for configuration
+require('./config/passport')(passport);
+
+// required for passport
+app.use(session({
+  secret: 'sshhhhitsasecretdonttellanyone',
+  store: new redisStore({ host: configAuth.session.host, port: configAuth.session.port, db: configAuth.session.database}),
+  resave: false, // don't save session if unmodified
+  saveUninitialized: false, // don't create session until something stored
+  cookie: {
+    maxAge: 43200000 // 12 hours
+  }
+}));
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for msgs stored in session
+
 //routes
+var admin = require('./routes/admin');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var events = require('./routes/events');
@@ -36,6 +65,7 @@ var blog = require('./routes/blog');
 var resources = require('./routes/resources');
 var index = require('./routes/index');
 
+app.use('/admin', admin);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/events', events);
@@ -54,7 +84,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-/*if (app.get('env') === 'development') {
+if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -72,7 +102,7 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
-});*/
+});
 
 
 module.exports = app;

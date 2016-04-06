@@ -18,13 +18,20 @@ router.get('/new', isloggedin.isloggedin, function(req, res) {
 });
 
 /* POST /create */
-router.post('/', function(req, res) {
+router.post('/create', function(req, res) {
     console.log('THIS IS THE REQUEST FROM BLOG/NEW TO BLOG/CREATE :', req.body);
     models.Blogpost.create({
         user_id: '1',
         title: req.body.title,
         content: req.body.content
-    });
+    })
+        .then(function(data) {
+            console.log('asdfasdf', data);
+            res.json(data);
+        })
+        .catch(function(error) {
+            console.log('ERROR! ', error);
+        });
 });
 
 module.exports = router;

@@ -3,10 +3,13 @@ $('#newBlogPost').submit(function() {
     event.preventDefault();
     $('#content').val($('#editable').html());
 
-    var data = {};
-    data.title = $('#title').val();
-    data.content = $('#content').val();
-    JSON.stringify(data);
+    var data = {
+        "title": $('#title').val(),
+        "content": $('#content').val()
+    };
+    //data.title = $('#title').val();
+    //data.content = $('#content').val();
+
 
 
     console.log('data ',data);
@@ -15,13 +18,11 @@ $('#newBlogPost').submit(function() {
         type: 'POST',
         url: '/blog/create',
         data: data,
-        contentType: 'application/json'
-    })
-        .done(function(data) {
-            console.log('done ', data);
-        })
-        .fail(function(data) {
-            console.log('fail ', data);
-        });
+        contentType: 'application/json',
+        success: function(data) {
+            console.log('success');
+            console.log(data);
+        }
+    });
 
 });

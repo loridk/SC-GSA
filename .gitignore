@@ -12,3 +12,6 @@ node_modules/
 .idea/workspace.xml
 /config/config.json
 Procfile
+.idea/deployment.xml
+.idea/scopes/
+

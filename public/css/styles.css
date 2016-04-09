@@ -1,10 +1,14 @@
 body {
   background-color: #F1F0FF; }
 
+html, body {
+  height: 100%; }
+
 .wrap {
   padding-bottom: 100px;
   min-height: 100%;
-  position: relative; }
+  position: relative;
+  overflow: auto; }
 
 .darkBorder {
   border: solid #443266 1px; }

@@ -1,9 +1,29 @@
 body {
   background-color: #F1F0FF; }
 
+.wrap {
+  padding-bottom: 100px;
+  min-height: 100%;
+  position: relative; }
+
+.darkBorder {
+  border: solid #443266 1px; }
+
+button {
+  background-color: #443266;
+  color: #F1F0FF;
+  border: solid 1px #C3C3E5;
+  border-radius: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold; }
+
 .special {
   margin: 2% 0 2%;
-  padding-bottom: 2%;
+  padding: 2%;
   background-color: #8C489F;
   color: #C3C3E5;
   border-radius: 25px;
@@ -102,7 +122,6 @@ nav {
   border: solid 1px #8C489F; }
 
 .icons {
-  margin: .25% 0 0 1%;
   /* unvisited link */
   /* visited link */
   /* mouse over link */

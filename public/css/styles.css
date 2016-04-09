@@ -33,6 +33,11 @@ footer {
 nav {
   margin-left: 35%; }
 
+/* BLOG POST EDITOR STYLES */
+.editable {
+  border: 1px solid lightgray;
+}
+
 /* Temporary */
 #mainArea {
   height: 500px; }

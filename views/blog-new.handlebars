@@ -1,4 +1,11 @@
 <h1>Create a new blog post</h1>
-<form name="newBlogPost">
-    <label>Title</label>
+<form name="newBlogPost" id="newBlogPost">
+    <label for="title">Title</label>
+    <input id="title" name="title">
+    <label for="editable">Content</label>
+    <div class="editable" id="editable">
+    </div>
+    <script>var editor = new MediumEditor('.editable');</script>
+    <input type="hidden" id="content">
+    <input type="submit" value="Save">
 </form>

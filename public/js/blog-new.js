@@ -1,5 +1,5 @@
 $('#newBlogPost').submit(function() {
-    'use strict';
+
     event.preventDefault();
     $('#content').val($('#editable').html());
 
@@ -10,7 +10,7 @@ $('#newBlogPost').submit(function() {
     //data.title = $('#title').val();
     //data.content = $('#content').val();
 
-
+    JSON.stringify(data);
 
     console.log('data ',data);
 
@@ -19,9 +19,14 @@ $('#newBlogPost').submit(function() {
         url: '/blog/create',
         data: data,
         contentType: 'application/json',
+        dataType: 'json',
         success: function(data) {
             console.log('success');
             console.log(data);
+        },
+        error: function(error) {
+            console.log('error');
+            console.log(error);
         }
     });
 

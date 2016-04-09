@@ -12,6 +12,7 @@ var flash        = require('connect-flash');
 var session      = require('express-session');
 var redisStore = require('connect-redis')(session);
 var configAuth = require('./config/config.json')[process.env.NODE_ENV];
+console.log('env: ', process.env.NODE_ENV);
 
 var app = express();
 

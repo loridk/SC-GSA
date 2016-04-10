@@ -14,7 +14,14 @@ $('#newBlogPost').submit(function() {
 
     console.log('data ',data);
 
-    jQuery.post('/blog/create', data, 'json');
+    jQuery.post(
+        '/blog/create',
+        data,
+        function(data) {
+            window.location = '/blog';
+        },
+        'json'
+    );
 
     //$.ajax({
     //    type: 'POST',

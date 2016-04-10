@@ -10,7 +10,6 @@ router.get('/', function(req, res) {
         .then(function(data) {
             responseData.error = false;
             responseData.posts = data;
-            console.log('data returned from findAll ', data);
             res.render('blog', {
                 isAdmin: req.isAuthenticated(),
                 posts: responseData.posts
@@ -26,13 +25,6 @@ router.get('/', function(req, res) {
             res.json(responseData);
 
         });
-    //
-    //responseData.posts = [];
-    //for (var i = 0; i < responseData.data.length; i++) {
-    //    responseData.posts[i] = responseData.data[i].dataValues;
-    //}
-    //console.log('responseData ', responseData);
-
 });
 
 /* GET /new */
@@ -52,7 +44,7 @@ router.post('/create', function(req, res) {
         content: req.body.content
     })
         .then(function(data) {
-            console.log('asdfasdf', data.dataValues.post_id);
+            console.log('post_id', data.dataValues.post_id);
             res.json(data);
         })
         .catch(function(error) {

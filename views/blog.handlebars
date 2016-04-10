@@ -1,5 +1,5 @@
 <h1>Blog</h1>
-<pre>{{posts}}</pre>
 {{#each posts}}
-    <pre>{{dataValues}}</pre>
+    <h2>{{dataValues.title}}</h2>
+    <div>{{{dataValues.content}}}</div>
 {{/each}}

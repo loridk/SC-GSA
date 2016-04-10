@@ -11,6 +11,10 @@ router.get('/', function(req, res) {
             responseData.error = false;
             responseData.posts = data;
             console.log('data returned from findAll ', data);
+            res.render('blog', {
+                isAdmin: req.isAuthenticated(),
+                posts: responseData.posts
+            });
         })
         .catch(function(err) {
             console.log(new Date());
@@ -20,6 +24,7 @@ router.get('/', function(req, res) {
             responseData.message = 'Error getting blog posts';
             res.status(500);
             res.json(responseData);
+
         });
     //
     //responseData.posts = [];
@@ -28,11 +33,6 @@ router.get('/', function(req, res) {
     //}
     //console.log('responseData ', responseData);
 
-
-    res.render('blog', {
-        isAdmin: req.isAuthenticated(),
-        posts: responseData.posts
-    });
 });
 
 /* GET /new */
@@ -45,13 +45,14 @@ router.get('/new', isloggedin.isloggedin, function(req, res) {
 /* POST /create */
 router.post('/create', function(req, res) {
     console.log('THIS IS THE REQUEST FROM BLOG/NEW TO BLOG/CREATE :', req.body);
-    models.Blogposts.create({
+
+    models.Blogpost.create({
         user_id: '1',
         title: req.body.title,
         content: req.body.content
     })
         .then(function(data) {
-            console.log('asdfasdf', data);
+            console.log('asdfasdf', data.dataValues.post_id);
             res.json(data);
         })
         .catch(function(error) {

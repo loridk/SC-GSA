@@ -52,4 +52,28 @@ router.post('/create', function(req, res) {
         });
 });
 
+/* GET /:id */
+router.get('/:id', function(req, res) {
+    responseData = {};
+    id = req.params.id;
+    models.Blogpost.findById(id)
+        .then(function(data) {
+            responseData.error = false;
+            responseData.post = data;
+            res.render('blog-singlePost', {
+                post: responseData.post
+            });
+        })
+        .catch(function(data) {
+            console.log(new Date());
+            console.log(data);
+            responseData.error = true;
+            responseData.errors = data.errors;
+            responseData.message = 'Error getting blog post';
+            res.status(500);
+            res.json(responseData);
+        });
+});
+
+
 module.exports = router;

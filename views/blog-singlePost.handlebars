@@ -1,21 +1,13 @@
-<input type="submit" value="< All Blog Posts">
-
-
-
 <div class="row text-center">
     <div class="col-md-6 col-md-offset-3">
-        <h1>{{heading}}</h1>
+        <h1>{{post.title}}</h1>
     </div>
 </div>
 
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
-        <p>{{date}} | Posted by {{Name here }} | {{Position}}</p>
-
-
-        <p>{{comment}}</p>
-
+        <div>{{{post.content}}}</div>
     </div>
 </div>
+

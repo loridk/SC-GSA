@@ -1,3 +1,4 @@
+<script src="/js/libs/medium-editor.js"></script>
 <div class="row text-center">
     <div class="col-md-6 col-md-offset-3">
         <h1>Blog</h1>
@@ -7,9 +8,9 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
 
-        <pre>{{posts}}</pre>
         {{#each posts}}
-            <pre>{{dataValues}}</pre>
+            <h2>{{{link dataValues.post_id '/blog/' dataValues.title}}}</h2>
+            <div>{{{dataValues.content}}}</div>
         {{/each}}
 
     </div>

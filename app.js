@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
+var helpers = require('./utils/handlebars-helpers.js');
 var compression = require('compression');
 
 var passport     = require('passport');
@@ -25,9 +26,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars({
   partialsDir: 'views/partials',
   layoutsDir: 'views/layouts',
-  defaultLayout: 'main'
+  defaultLayout: 'main',
+  helpers: helpers
 }));
 app.set('view engine', 'handlebars');
+
+
 
 app.use(compression());
 
@@ -35,7 +39,7 @@ app.use(compression());
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

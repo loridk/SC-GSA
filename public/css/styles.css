@@ -1,10 +1,75 @@
+body {
+  background-color: #F1F0FF; }
+
+html, body {
+  height: 100%; }
+
+.wrap {
+  padding-bottom: 100px;
+  min-height: 100%;
+  position: relative;
+  overflow: auto; }
+
+.darkBorder {
+  border: solid #443266 1px; }
+
+button {
+  background-color: #443266;
+  color: #F1F0FF;
+  border: solid 1px #C3C3E5;
+  border-radius: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold; }
+
+.special {
+  margin: 2% 0 2%;
+  padding: 2%;
+  background-color: #8C489F;
+  color: #C3C3E5;
+  border-radius: 25px;
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  .special a:link, .special a:visited, .special a:hover, .special a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
+  .special a:visited {
+    color: #F1F0FF;
+    font-weight: bold; }
+  .special a:hover {
+    color: #F1F0FF;
+    font-weight: bold; }
+  .special a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
+
 img {
   max-width: 100%;
   height: auto; }
 
 header {
-  background-color: #757575;
-  border-bottom: solid 3px #BABABA; }
+  background-color: #443266;
+  border-bottom: solid 3px #C3C3E5;
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  header a:link, header a:visited, header a:hover, header a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
+  header a:visited {
+    color: #F1F0FF;
+    font-weight: bold; }
+  header a:hover {
+    color: #F1F0FF;
+    font-weight: bold; }
+  header a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
 
 img.midAlign {
   vertical-align: middle; }
@@ -12,34 +77,126 @@ img.midAlign {
 .center {
   text-align: center; }
 
-.right {
-  text-align: right; }
-
 .topTitle {
   color: #ffffff;
   font-size: 2.5em;
   text-align: center; }
 
+header {
+  width: 100%; }
+
 footer {
-  background-color: #BABABA;
-  padding: 1.5% 0 .5%; }
+  background-color: #C3C3E5;
+  padding: 1.5% 0 .5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 #innerFoot {
   padding: .5% 0;
-  background-color: #757575;
+  background-color: #443266;
   text-align: center;
-  color: #ffffff; }
+  color: #ffffff;
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  #innerFoot a:link, #innerFoot a:visited, #innerFoot a:hover, #innerFoot a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
+  #innerFoot a:visited {
+    color: #F1F0FF;
+    font-weight: bold; }
+  #innerFoot a:hover {
+    color: #F1F0FF;
+    font-weight: bold; }
+  #innerFoot a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
 
 nav {
   margin-left: 35%; }
 
-/* BLOG POST EDITOR STYLES */
-.editable {
-  border: 1px solid lightgray;
-}
+.quotes {
+  margin: 2% 0 2%;
+  background-color: #C3C3E5;
+  border-radius: 25px;
+  padding: 5%;
+  border: solid 1px #8C489F; }
 
-/* Temporary */
-#mainArea {
-  height: 500px; }
+.icons {
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */ }
+  .icons a:link, .icons a:visited, .icons a:hover, .icons a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
+  .icons a:visited {
+    color: #F1F0FF;
+    font-weight: bold; }
+  .icons a:hover {
+    color: #F1F0FF;
+    font-weight: bold; }
+  .icons a:active {
+    color: #F1F0FF;
+    font-weight: bold; }
+
+/* unvisited link */
+a:link, a:visited, a:hover, a:active {
+  color: #8C489F;
+  font-weight: bold; }
+
+/* visited link */
+/* mouse over link */
+/* selected link */
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: #443266 url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s; }
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s; }
+
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1; }
+
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5; }
+
+.no-touch .cd-top:hover {
+  background-color: #443266;
+  opacity: 1; }
+
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px; } }
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px; } }
 
 /*# sourceMappingURL=styles.css.map */

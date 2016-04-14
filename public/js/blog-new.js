@@ -4,9 +4,7 @@ $('#newBlogPost').submit(function() {
     $('#content').val($('#editable').html());
 
     var data = {};
-        //new FormData();
-    //data.append('title', $('#title').val());
-    //data.append('content', $('#content').val());
+    data.post_date = new Date();
     data.title = $('#title').val();
     data.content = $('#content').val();
 

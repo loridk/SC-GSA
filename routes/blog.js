@@ -6,13 +6,33 @@ var models = require('../models');
 /* GET / */
 router.get('/', function(req, res) {
     var responseData = {};
-    models.Blogpost.findAll()
+
+    var page = 1;
+    var limit = 3;
+    var offset = 0;
+
+    if (req.query.p != undefined) {
+        page = req.query.p;
+        offset = page * limit;
+    }
+
+    models.Blogpost.findAndCountAll({
+            order:'post_id DESC',
+            offset: offset,
+            limit: limit
+        })
         .then(function(data) {
+            console.log('returned data ', data);
             responseData.error = false;
-            responseData.posts = data;
+            responseData.posts = data.rows;
             res.render('blog', {
                 isAdmin: req.isAuthenticated(),
-                posts: responseData.posts
+                posts: responseData.posts,
+                pagination: {
+                    page: page,
+                    limit: limit,
+                    pageCount: data.count/3
+                }
             });
         })
         .catch(function(err) {
@@ -25,6 +45,8 @@ router.get('/', function(req, res) {
             res.json(responseData);
 
         });
+
+    console.log('req query.p ', req.query.p);
 });
 
 /* GET /new */
@@ -41,7 +63,8 @@ router.post('/create', function(req, res) {
     models.Blogpost.create({
         user_id: '1',
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        post_date: req.body.post_date
     })
         .then(function(data) {
             console.log('post_id', data.dataValues.post_id);

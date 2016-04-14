@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var handlebars = require('express-handlebars');
+var exphbs = require('express-handlebars');
 var helpers = require('./utils/handlebars-helpers.js');
 var compression = require('compression');
 
@@ -23,14 +23,13 @@ models.sequelize.sync();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars({
+app.engine('handlebars', exphbs({
   partialsDir: 'views/partials',
   layoutsDir: 'views/layouts',
   defaultLayout: 'main',
   helpers: helpers
 }));
 app.set('view engine', 'handlebars');
-
 
 
 app.use(compression());

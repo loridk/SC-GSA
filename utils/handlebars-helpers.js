@@ -18,8 +18,18 @@ function paginate(pagination) {
     return paginate(pagination, options);
 }
 
+function truncatePost(content, id) {
+    if (content.length > 300) {
+        var link = new Handlebars.SafeString("<a href='"+"/blog/"+id+"'>read more</a>.");
+        return content.substring(0, 299)+"... "+link;
+    } else {
+        return content;
+    }
+}
+
 module.exports = {
     link: link,
     dateFormat: dateFormat,
-    paginate: paginate
+    paginate: paginate,
+    truncatePost: truncatePost
 };

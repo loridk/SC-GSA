@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 
     if (req.query.p != undefined) {
         page = req.query.p;
-        offset = page * limit;
+        offset = (page-1) * limit;
     }
 
     models.Blogpost.findAndCountAll({
@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
                 pagination: {
                     page: page,
                     limit: limit,
-                    pageCount: data.count/3
+                    pageCount: Math.ceil(data.count/3)
                 }
             });
         })
@@ -78,13 +78,16 @@ router.post('/create', function(req, res) {
 /* GET /:id */
 router.get('/:id', function(req, res) {
     responseData = {};
+    console.log('req.headers[referer] ', req.headers['referer']);
+    var referringUrl = req.headers['referer'];
     id = req.params.id;
     models.Blogpost.findById(id)
         .then(function(data) {
             responseData.error = false;
             responseData.post = data;
             res.render('blog-singlePost', {
-                post: responseData.post
+                post: responseData.post,
+                referringUrl: referringUrl
             });
         })
         .catch(function(data) {

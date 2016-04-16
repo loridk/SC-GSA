@@ -1,21 +1,22 @@
-<input type="submit" value="< All Blog Posts">
-
-
-
 <div class="row text-center">
     <div class="col-md-6 col-md-offset-3">
-        <h1>{{heading}}</h1>
+        <h1>{{post.title}}</h1>
+        <p>{{{dateFormat post.post_date}}}</p>
     </div>
 </div>
 
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
-        <p>{{date}} | Posted by {{Name here }} | {{Position}}</p>
-
-
-        <p>{{comment}}</p>
+        {{#if isAdmin}}
+            <input id="postId" type="hidden" value="{{post.post_id}}">
+            <button id="deletePost" class="pull-right btn btn-danger">Delete</button>
+        {{/if}}
+        <div>{{{post.content}}}</div>
+        <ul>
+            <li><a class="btn btn-default" href="{{referringUrl}}">Back to all posts</a></li>
+        </ul>
 
     </div>
 </div>
+

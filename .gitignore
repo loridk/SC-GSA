@@ -1,5 +1,6 @@
 node_modules/
 .DS_Store
+.idea/**
 .idea/.name
 .idea/SC-GSA.iml
 .idea/dictionaries/

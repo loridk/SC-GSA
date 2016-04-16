@@ -143,8 +143,8 @@ nav {
     color: #F1F0FF;
     font-weight: bold; }
 
-.editable {
-  height: 500px; }
+.blog-bg {
+  background-color: #F1F0FF; }
 
 /* unvisited link */
 a:link, a:visited, a:hover, a:active {

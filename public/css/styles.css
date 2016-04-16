@@ -156,7 +156,7 @@ a:link, a:visited, a:hover, a:active {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 40px;
+  bottom: 70px;
   right: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   /* image replacement properties */
@@ -196,14 +196,14 @@ a:link, a:visited, a:hover, a:active {
 @media only screen and (min-width: 768px) {
   .cd-top {
     right: 20px;
-    bottom: 20px;
+    bottom: 70px;
     z-index: 1; } }
 @media only screen and (min-width: 1024px) {
   .cd-top {
     height: 60px;
     width: 60px;
     right: 30px;
-    bottom: 30px;
+    bottom: 80px;
     z-index: 1; } }
 
 /*# sourceMappingURL=styles.css.map */

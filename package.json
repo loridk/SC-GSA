@@ -19,6 +19,7 @@
     "fs": "0.0.2",
     "handlebars": "^4.0.5",
     "handlebars-paginate": "^0.1.0",
+    "medium-editor-insert-plugin": "^2.3.0",
     "moment": "^2.12.0",
     "morgan": "~1.6.1",
     "passport": "^0.3.2",

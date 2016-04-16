@@ -27,6 +27,21 @@ function truncatePost(content, id) {
     }
 }
 
+//function editLink(id, url, text) {
+//    var id = Handlebars.escapeExpression(id);
+//    var url = Handlebars.escapeExpression(url);
+//    return new Handlebars.SafeString(
+//        "<a href='"+ url + id + "/edit'>" + text + "</a>"
+//    );
+//}
+//
+//function clean(content) {
+//    var rex = /(<([^>]+)>)/ig;
+//    var cleanContent = content.replace(rex , "");
+//    console.log('cleanContent ', cleanContent);
+//    return cleanContent;
+//}
+
 module.exports = {
     link: link,
     dateFormat: dateFormat,

@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
             limit: limit
         })
         .then(function(data) {
-            console.log('returned data ', data);
+            //console.log('returned data ', data);
             responseData.error = false;
             responseData.posts = data.rows;
             res.render('blog', {
@@ -45,8 +45,6 @@ router.get('/', function(req, res) {
             res.json(responseData);
 
         });
-
-    console.log('req query.p ', req.query.p);
 });
 
 /* GET /new */
@@ -58,7 +56,6 @@ router.get('/new', isloggedin.isloggedin, function(req, res) {
 
 /* POST /create */
 router.post('/create', function(req, res) {
-    console.log('THIS IS THE REQUEST FROM BLOG/NEW TO BLOG/CREATE :', req.body);
 
     models.Blogpost.create({
         user_id: '1',
@@ -78,7 +75,7 @@ router.post('/create', function(req, res) {
 /* GET /:id */
 router.get('/:id', function(req, res) {
     responseData = {};
-    console.log('req.headers[referer] ', req.headers['referer']);
+    //console.log('req.headers[referer] ', req.headers['referer']);
     var referringUrl = req.headers['referer'];
     id = req.params.id;
     models.Blogpost.findById(id)
@@ -87,7 +84,8 @@ router.get('/:id', function(req, res) {
             responseData.post = data;
             res.render('blog-singlePost', {
                 post: responseData.post,
-                referringUrl: referringUrl
+                referringUrl: referringUrl,
+                isAdmin: req.isAuthenticated()
             });
         })
         .catch(function(data) {
@@ -100,6 +98,86 @@ router.get('/:id', function(req, res) {
             res.json(responseData);
         });
 });
+
+/* DELETE /:id */
+router.delete('/:id', function(req, res) {
+    //console.log('delete request ', req);
+    responseData = {};
+    var id = req.params.id;
+    models.Blogpost.destroy({
+        where: {
+            post_id: parseInt(id)
+        }
+    })
+        .then(function(data) {
+            responseData.error = false;
+            responseData.data = data;
+            console.log('success response data ', responseData);
+            res.json(responseData);
+        })
+        .catch(function(data) {
+            console.log(new Date());
+            responseData.error = true;
+            responseData.errors = data.errors;
+            responseData.message = 'Error deleting blog post';
+            console.log('catch response data ', responseData);
+            //res.status(500);
+            res.json(responseData);
+        });
+});
+//
+///* GET /:id/edit */
+//router.get('/:id/edit', isloggedin.isloggedin, function(req, res) {
+//    responseData = {};
+//    var referringUrl = req.headers['referer'];
+//    var id = req.params.id;
+//
+//    models.Blogpost.findById(id)
+//        .then(function(data) {
+//            responseData.error = false;
+//            responseData.post = data;
+//            res.render('blog-edit', {
+//                post: responseData.post,
+//                referringUrl: referringUrl,
+//                isAdmin: req.isAuthenticated()
+//            });
+//        })
+//        .catch(function(data) {
+//            console.log(new Date());
+//            console.log(data);
+//            responseData.error = true;
+//            responseData.errors = data.errors;
+//            responseData.message = 'Error getting blog post';
+//            res.status(500);
+//            res.json(responseData);
+//        });
+//});
+//
+///* PUT /:id */
+//router.put('/:id', isloggedin.isloggedin, function(req, res) {
+//    models.Blogpost.update({
+//            title: req.body.title,
+//            content: req.body.content,
+//            post_date: req.body.post_date
+//        }, {
+//            where: {
+//                post_id: parseInt(req.params.id)
+//            }
+//    })
+//        .then(function(data) {
+//            console.log('data', data);
+//            res.json(data);
+//        })
+//        .catch(function(data) {
+//            console.log(new Date());
+//            console.log(data);
+//            responseData.error = true;
+//            responseData.errors = data.errors;
+//            responseData.message = 'Error updating blog post';
+//            res.status(500);
+//            res.json(responseData);
+//        });
+//});
 
 
 module.exports = router;

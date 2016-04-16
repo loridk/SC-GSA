@@ -1,6 +1,8 @@
 node_modules/
 .DS_Store
 .idea/**
+/config/config.json
+.idea/
 .idea/.name
 .idea/SC-GSA.iml
 .idea/dictionaries/
@@ -11,3 +13,9 @@ node_modules/
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/scopes/scope_setting.xml
+Procfile
+.idea/deployment.xml
+.idea/scopes/
+npm-debug.log
+

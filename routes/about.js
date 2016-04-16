@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET about page. */
 router.get('/', function(req, res) {
-  res.render('index', {
-    isAdmin: req.isAuthenticated()
-  });
+    res.render('about', {
+        isAdmin: req.isAuthenticated()
+    });
 });
 
 module.exports = router;

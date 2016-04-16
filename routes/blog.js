@@ -75,7 +75,7 @@ router.post('/create', function(req, res) {
 /* GET /:id */
 router.get('/:id', function(req, res) {
     responseData = {};
-    //console.log('req.headers[referer] ', req.headers['referer']);
+    console.log('req.headers ', req.headers);
     var referringUrl = req.headers['referer'];
     id = req.params.id;
     models.Blogpost.findById(id)

@@ -1,12 +1,17 @@
+/*$mainColor: #443266;
+$secColor: #C3C3E5;
+$bodyBG: #F1F0FF;
+$linkCol: #8C489F;*/
+/*#0058ba
+#ffb1f0
+#ff75cf
+#7defff
+#edcdff*/
 body {
   background-color: #F1F0FF; }
 
 html, body {
   height: 100%; }
-
-.checkbox{
-  float:right;
-}
 
 .wrap {
   padding-bottom: 100px;
@@ -15,12 +20,12 @@ html, body {
   overflow: auto; }
 
 .darkBorder {
-  border: solid #443266 1px; }
+  border: solid #0058ba 1px; }
 
 button {
-  background-color: #443266;
+  background-color: #0058ba;
   color: #F1F0FF;
-  border: solid 1px #C3C3E5;
+  border: solid 1px #ffb1f0;
   border-radius: 25px;
   padding: 15px 32px;
   text-align: center;
@@ -33,7 +38,7 @@ button {
   margin: 2% 0 2%;
   padding: 2%;
   background-color: #8C489F;
-  color: #C3C3E5;
+  color: #ffb1f0;
   border-radius: 25px;
   /* visited link */
   /* mouse over link */
@@ -56,8 +61,8 @@ img {
   height: auto; }
 
 header {
-  background-color: #443266;
-  border-bottom: solid 3px #C3C3E5;
+  background-color: #0058ba;
+  border-bottom: solid 3px #ffb1f0;
   /* unvisited link */
   /* visited link */
   /* mouse over link */
@@ -90,7 +95,7 @@ header {
   width: 100%; }
 
 footer {
-  background-color: #C3C3E5;
+  background-color: #ffb1f0;
   padding: 1.5% 0 .5%;
   width: 100%;
   position: absolute;
@@ -99,7 +104,7 @@ footer {
 
 #innerFoot {
   padding: .5% 0;
-  background-color: #443266;
+  background-color: #0058ba;
   text-align: center;
   color: #ffffff;
   /* unvisited link */
@@ -124,7 +129,7 @@ nav {
 
 .quotes {
   margin: 2% 0 2%;
-  background-color: #C3C3E5;
+  background-color: #ffb1f0;
   border-radius: 25px;
   padding: 5%;
   border: solid 1px #8C489F; }
@@ -170,7 +175,7 @@ a:link, a:visited, a:hover, a:active {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: #443266 url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  background: #0058ba url(../img/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;

@@ -20,10 +20,10 @@ html, body {
   overflow: auto; }
 
 .darkBorder {
-  border: solid #0058ba 1px; }
+  border: solid #443266 1px; }
 
 button {
-  background-color: #0058ba;
+  background-color: #443266;
   color: #F1F0FF;
   border: solid 1px #ffb1f0;
   border-radius: 25px;
@@ -61,7 +61,7 @@ img {
   height: auto; }
 
 header {
-  background-color: #0058ba;
+  background-color: #443266;
   border-bottom: solid 3px #ffb1f0;
   /* unvisited link */
   /* visited link */
@@ -104,7 +104,7 @@ footer {
 
 #innerFoot {
   padding: .5% 0;
-  background-color: #0058ba;
+  background-color: #443266;
   text-align: center;
   color: #ffffff;
   /* unvisited link */
@@ -175,7 +175,7 @@ a:link, a:visited, a:hover, a:active {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: #0058ba url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  background: #443266 url(../img/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03edb80a-9135-437a-960e-1810745307b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/blog.handlebars" afterPath="$PROJECT_DIR$/views/blog.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/resources.handlebars" afterPath="$PROJECT_DIR$/views/resources.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.css.map" afterPath="$PROJECT_DIR$/public/css/styles.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.css" afterPath="$PROJECT_DIR$/public/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.scss" afterPath="$PROJECT_DIR$/public/css/styles.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,20 +29,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="6042">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.031772576" vertical-offset="0" max-vertical-offset="6042">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resources.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="resources.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/resources.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4916388" vertical-offset="14450" max-vertical-offset="16549">
+            <state vertical-scroll-proportion="1.0357143" vertical-offset="14450" max-vertical-offset="16549">
               <caret line="759" column="84" selection-start-line="759" selection-start-column="84" selection-end-line="759" selection-end-column="84" />
               <folding />
             </state>
@@ -73,9 +71,9 @@
         <option value="db-console:/54ed8ab0/ebccd716-c796-4a70-889b-dcca7db7ea07/" />
         <option value="$PROJECT_DIR$/views/blog-singlePost.handlebars" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public/css/styles.scss" />
         <option value="$PROJECT_DIR$/views/blog.handlebars" />
         <option value="$PROJECT_DIR$/views/resources.handlebars" />
+        <option value="$PROJECT_DIR$/public/css/styles.scss" />
       </list>
     </option>
   </component>
@@ -666,18 +664,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/styles.scss">
+    <entry file="file://$PROJECT_DIR$/views/resources.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.392857" vertical-offset="0" max-vertical-offset="6042">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        <state vertical-scroll-proportion="1.0357143" vertical-offset="14450" max-vertical-offset="16549">
+          <caret line="759" column="84" selection-start-line="759" selection-start-column="84" selection-end-line="759" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/resources.handlebars">
+    <entry file="file://$PROJECT_DIR$/public/css/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4916388" vertical-offset="14450" max-vertical-offset="16549">
-          <caret line="759" column="84" selection-start-line="759" selection-start-column="84" selection-end-line="759" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.031772576" vertical-offset="0" max-vertical-offset="6042">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="18" />
           <folding />
         </state>
       </provider>

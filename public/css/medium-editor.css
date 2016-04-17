@@ -217,3 +217,20 @@
 
 .medium-editor-hidden {
   display: none; }
+
+/* Blog validation styles
+  Going here because we aren't running a
+  build process for converting, contatenating
+  and minifying, and I don't want this clobbered */
+.error {
+  color: red;
+}
+#newBlogPost div.form-control {
+  height: 100%;
+}
+#newBlogPost #content {
+  height: 0;
+  width: 0;
+  border: none;
+  background-color: inherit;
+}

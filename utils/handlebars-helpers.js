@@ -11,7 +11,7 @@ function link(id, url, text) {
 }
 
 function dateFormat(date) {
-    return moment(date).format('MMMM do YYYY');
+    return moment(date).format('MMMM Do YYYY');
 }
 
 function paginate(pagination) {
